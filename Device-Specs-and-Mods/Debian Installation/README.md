@@ -104,5 +104,5 @@ The folder contains images of the Dell D630 before, during, and after installing
  - Then: sudo systemctl start lightdm
 - Once installation is complete: Type: sudo reboot
 - This reboots the system
-- You should see the XFCE desktop load.
+- You should see the XFCE desktop load. [View Image](Images/01-IMG.jpeg)
     
