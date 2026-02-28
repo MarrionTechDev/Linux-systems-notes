@@ -1,4 +1,4 @@
-# Device Specifications and Setup
+# Device Specifications and Modifications
 
 This folder documents the hardware I used to experiment with the Linux system
 Since it is important to break things as you are learn Linux, I decided to revive an old laptop I had lying around.
