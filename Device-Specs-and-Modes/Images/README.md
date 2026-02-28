@@ -1,4 +1,4 @@
-## Debian Installation Process Before, During, and After with Images
+# Debian Installation Process Before, During, and After with Images
 
 This is the machine I had lying around and decided to use as a Linux machine.
 
@@ -6,7 +6,7 @@ The folder contains images of the Dell D630 before, during, and after installing
 
 ---
 
-# Issues
+## Issues
 - Had to reset the BIOS (System) password on boot. (used https://bios-pw.org/ )
 - Reset the System Password in BIOS and set it to blank. (used the same password)
   Made sure:
@@ -22,7 +22,7 @@ The folder contains images of the Dell D630 before, during, and after installing
 
 ---
 
-# Debian 12.0.0 Installation 
+## Debian 12.0.0 Installation 
 - Choose Language
 - Configure the network. "Choose the one to use as the primary network interface during the installation" (Went with enp9s0 (Broadcom NetXtreme) with ethernet connection)
  - Enter the hostname for the system. (The name your machine uses on a network)
@@ -45,7 +45,7 @@ The folder contains images of the Dell D630 before, during, and after installing
   - Proxy: leave blank
 - Configure popularity contest. Helps Debian developers see which packages are popular. (Optional. I choose no)
 
-  ## Software selection
+  ### Software selection
   - Desktop Environments(KDEs): GNOME, KDE Plasma, MATE, XFCE, LXDE, LXQt, GNOME Flashback
     - Heavy: GNOME, KDE
     - Lightweight: XFCE, LXDE, LXQt, MATE
@@ -66,14 +66,14 @@ The folder contains images of the Dell D630 before, during, and after installing
 
 ---
 
-# Updating the Package List, Remove GNOME and install XFCE (lightweight DE), and Installing SSH server
+## Updating the Package List, Remove GNOME and install XFCE (lightweight DE), and Installing SSH server
 
-## Updating Package List
+### Updating Package List
 - Open up the termial (ctrl + Alt + T) or tty (Ctrl + Alt + F3)
 - Type: sudo apt update
 - Type your user password when prompted (This refreshes the package list)
 
-## Install OpenSSH - server 
+### Install OpenSSH - server 
 - Next, type: sudo apt install openssh-server
 - “Do you want to continue? [Y/n]” → type Y and press Enter
   - SSH = Secure Shell
@@ -88,7 +88,7 @@ The folder contains images of the Dell D630 before, during, and after installing
   - Confirms SSH is running
   - Should show, Active: active (running)
 
-## Removing GNOEM and Installing Lightweight XFCE
+### Removing GNOEM and Installing Lightweight XFCE
 - Still in terminal
 - Type: sudo apt remove --purge gnome-shell gdm3 gnome-session
 - Do you want to continue? [Y/n] → type Y and press Enter
