@@ -18,7 +18,7 @@ The folder contains images of the Dell D630 before, during, and after installing
 - Upgraded both the HDD to an SSD. Original screws were too short (Ignored it since it still registered in BIOS and clicked in place after pushing it further)
   [View Image](Images/20260221-173022.jpg) [View Image](Images/20260221-182832.jpg) [View Image](Images/20260221-173901.jpg)
 - Upgraded both RAM sticks from 2GB to 4GB. Memory stick didn't sit properly (Had to push until it clicked in place)
-  [View Image](Images/20260221-173015.jpg) [View Image](Images/20260221-182805.jpg) [View Image](Images/20260212-141411.jpg)
+  [View Image](Images/20260221-173015.jpg) [View Image](Images/20260221-182805.jpg) [View Image](Debian Installation/Images/20260212_141411.jpg)
 - Debian installation got stuck at "Load installer components from Installation media" (Was using a large flash drive as bootable USB. Using an 8GB flash drive worked later) [View Image](Images/20260216-174200.jpg)
 - Remapped the "s" button to Left shift for typing using the terminal.
 
