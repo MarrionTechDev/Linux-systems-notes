@@ -7,19 +7,19 @@ The folder contains images of the Dell D630 before, during, and after installing
 ---
 
 ## Issues
-- Had to reset the BIOS (System) password on boot. (used https://bios-pw.org/ ) [View Image](Images/20260212-135240.jpg)
-- Reset the System Password in BIOS and set it to blank. (used the same password) [View Image](Images/20260212-141546.jpg)
+- Had to reset the BIOS (System) password on boot. (used https://bios-pw.org/ ) [View Image](Images/20260212_135240.jpg)
+- Reset the System Password in BIOS and set it to blank. (used the same password) [View Image](Images/20260212_141546.jpg)
   Made sure:
   - System Password = Disabled 
   - Set up Password = Disabled 
    
-- The laptop had a Windows XP login password. (Ignored it since I would wipe it with Linux) [View Image](Images/20260212-143325.jpg)
-- Battery wasn't charging. "The system cannot communicate with this battery." (Ignored it since I would use it as a server later with a charger.) [View Image](Images/20260212-145541.jpg)
+- The laptop had a Windows XP login password. (Ignored it since I would wipe it with Linux) [View Image](Images/20260212_143325.jpg)
+- Battery wasn't charging. "The system cannot communicate with this battery." (Ignored it since I would use it as a server later with a charger.) [View Image](Images/20260212_145541.jpg)
 - Upgraded both the HDD to an SSD. Original screws were too short (Ignored it since it still registered in BIOS and clicked in place after pushing it further)
-  [View Image](Images/20260221-173022.jpg) [View Image](Images/20260221-182832.jpg) [View Image](Images/20260221-173901.jpg)
+  [View Image](Images/20260221_173022.jpg) [View Image](Images/20260221_182832.jpg) [View Image](Images/20260221_173901.jpg)
 - Upgraded both RAM sticks from 2GB to 4GB. Memory stick didn't sit properly (Had to push until it clicked in place)
-  [View Image](Images/20260221-173015.jpg) [View Image](Images/20260221-182805.jpg) [View Image](Debian Installation/Images/20260212_141411.jpg)
-- Debian installation got stuck at "Load installer components from Installation media" (Was using a large flash drive as bootable USB. Using an 8GB flash drive worked later) [View Image](Images/20260216-174200.jpg)
+  [View Image](Images/20260221_173015.jpg) [View Image](Images/20260221_182805.jpg) [View Image](Debian Installation/Images/20260212_141411.jpg)
+- Debian installation got stuck at "Load installer components from Installation media" (Was using a large flash drive as bootable USB. Using an 8GB flash drive worked later) [View Image](Images/20260216_174200.jpg)
 - Remapped the "s" button to Left shift for typing using the terminal.
 
 ---
@@ -30,14 +30,14 @@ The folder contains images of the Dell D630 before, during, and after installing
  - Enter the hostname for the system. (The name your machine uses on a network)
  - Removed the syn-2602-8000-xxxx-xxxx-xxxx-xxxx number router/ ISP before setting hostname (Hostname will show up as user@hostname:~$ later)
 - Left Domain Name blank (This is just a standalone lab machine for myself)
-- Set up users and passwords. Set a password for 'root', the system administrative account. (Left blank and continue to disable direct root login and get sudo privileges) [View Image](Images/20260221-192809.jpg)
+- Set up users and passwords. Set a password for 'root', the system administrative account. (Left blank and continue to disable direct root login and get sudo privileges) [View Image](Images/20260221_192809.jpg)
   - Set up user accounts and passwords. Your Name, Username (no caps, no space, and simple: username@hostname:~$), and Password (Your sudo password. Make it strong and memorable)
 - Configure the clock with the time zone
 - Partition Disks 
-  - Selected Guided – use entire disk [View Image](Images/20260221-195113.jpg)
+  - Selected Guided – use entire disk [View Image](Images/20260221_195113.jpg)
   - Select the SSD (256.1 GB)
   - Partitioning scheme: All files in one partition
-    [View Image](Images/20260221-200216.jpg) [View Image](Images/20260221-200345.jpg)
+    [View Image](Images/20260221_200216.jpg) [View Image](Images/20260221_200345.jpg)
 - Leave to install base system
   - The core Linux kernel is being copied
   - Essential packages are being installed
