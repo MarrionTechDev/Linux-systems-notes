@@ -4,12 +4,105 @@ This is the machine I had lying around and decided to use as a Linux machine.
 
 The folder contains images of the Dell D630 before, during, and after installing Debian 12.0.0 Linux Distro.
 
+---
+
 ## Issues
 - Had to reset the BIOS (System) password on boot. (used https://bios-pw.org/ )
 - Reset the System Password in BIOS and set it to blank. (used the same password)
   Made sure:
+  
   System Password = Disabled
   Setup Password = Disabled
+   
 - The laptop had a Windows XP login password. (Ignored it since I would wipe it with Linux)
 - Battery wasn't charging. "The system cannot communicate with this battery." (Ignored it since I would use it as a server later with a charger.)
 - Upgraded both the HDD to an SSD. Original screws were too short (Ignored it since it still registered in BIOS and clicked in place after pushing it further)
+- Debian installation got stuck at "Load installer components from Installation media" (Was using a large flash drive as bootable USB. Using an 8GB flash drive worked later)
+- Remapped the "s" button to Left shift for tying using the terminal.
+
+---
+
+## Debian 12.0.0 Installation 
+- Choose Language
+- Configure the network. "Choose the one to use as the primary network interface during the installation" (Went with enp9s0 (Broadcom NetXtreme) with ethernet connection)
+ - Enter the hostname for the system. (The name your machine uses on a network)
+ - Removed the syn-2602-8000-xxxx-xxxx-xxxx-xxxx number router/ ISP before setting hostname (Hostname witll show up as user@hostname:~$ later)
+- Left Domain Name blank (This is just a standalone lab machine for myself)
+- Set up users and password. set a password for 'root', the system administrative account. (Left blank and continue to disables direct root login and get sudo privileges)
+  - set up user account and passwords. Your Name, Username (no caps, no space and simple: username@hostname:~$) and Password (Your sudo password. Make it strong and memorable)
+- Configure clock with time zone
+- Partition Disks
+  - Seletected Guided – use entire disk
+  - Select the SSD (256.1 GB)
+  - Partitioning scheme: All files in one partition
+- Leave to install base system
+  - Core Linux kernel is being copied
+  - Essential packages are being installed
+  - File system structure is being built
+- Configure package manager
+  - Country of mirror: United States
+  - Mirror: deb.debian.org
+  - Proxy: leave blank
+- Configure popularity contest. Helps Debian developers see which packages are popular. (Optional. I choose no)
+
+  # Software selection
+  - Desktop Environments(KDEs): GNOME, KDE Plasma, MATE, XFCE, LXDE, LXQt, GNOME Flashback
+    - Heavy: GNOME, KDE
+    - Lightweight: XFCE, LXDE, LXQt, MATE
+    We can always install XFCE later manually.
+  - Servers / Utilities
+    - Web server → Apache/Nginx
+    - SSH server → Very important for remote access
+    - Standard system utilities → Always select
+    - Print server → Skip
+  - Was going to go for mininal CLI with standard system utilites and SSH server for focus Linux machine learning
+  - Accidentally selected Debian desktop and gnome without checking ssh server (Uninstalled Gnome and installs XFCE and ssh server later)
+    
+- Configure grub pc. Install the grub boot loader to primary drive
+ - Lets your computer start Debian
+ - Can handle multiple OSes (dual boot) if needed
+ - Lets you choose kernel versions if multiple installed
+- Installation finished!!
+
+---
+
+## Updating the Package List, Remove GNOME and install XFCE (lightweight DE) and Installing SSH server
+
+# Updating Package List
+- Open up the termial (ctrl + Alt + T) or tty (Ctrl + Alt + F3)
+- Type : sudo apt update
+- Type your user password when prompted (This refreshes package list)
+
+# Install Openssh - server 
+- Next, type: sudo apt install openssh-server
+- “Do you want to continue? [Y/n]” → type Y and press Enter
+  - SSH = Secure Shell
+  - Lets you remotely connect to your D630 from another computer over the network
+  - You can run commands, edit files, and manage your “server” without sitting in front of it
+- Type : sudo systemctl enable ssh
+- This enables SSH to start automatically everything the computer boots
+- Type : sudo systemctl start ssh
+- This start SSH right then.
+  - Optional Quick Check
+  - Type : sudo systemctl status ssh
+  - Confirms SSH is running
+  - Should show, Active: active (running)
+
+# Removing GNOEM and Installing Lightweight XFCE
+- Still in terminal
+- Type : sudo apt remove --purge gnome-shell gdm3 gnome-session
+- Do you want to continue? [Y/n] → type Y and press Enter
+ - After, Type : sudo apt autoremove
+ - This removes leftover dependencies GNOME needed
+ - Frees even more space
+- If your have a black blank screen with a beeping cursor at the Left top after this, press Press Ctrl + Alt + F3 to log back (if you were using tty)
+- Type : sudo apt install xfce4 lightdm
+- If asked "Multiple display managers installed. Use the arrow keys to select lightdm
+- Press Enter
+ - Optional to ensure XFCE will show login screen after boot.
+ - Type : sudo systemctl enable lightdm
+ - Then : sudo systemctl start lightdm
+- Once installation is complete: Type : sudo reboot
+- This reboots the system
+- You should see the XFCE desktop load.
+    
