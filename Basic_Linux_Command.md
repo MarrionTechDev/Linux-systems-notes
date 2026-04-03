@@ -60,7 +60,7 @@ ctrl + r search    # Search through history for command
 whoami                   # show current user
 id                       # shows the user ID, groups, and other details about the user.
 sudo adduser username    # create a new user
-su - username            switch users
+su - username            # switch users
 chmod +x file            # Make executable for a file
 chmod 755 file           # Set permissions for a file
 chown user:group file    # Change owner of a file
